@@ -1,13 +1,33 @@
 package co.kr.promptech.controller;
 
+import co.kr.promptech.model.PostVO;
+import co.kr.promptech.service.PostService;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+
+@RequiredArgsConstructor
 @Controller
 public class BoardController {
 
-    @GetMapping("/")
-    public String board(){
+    private final PostService postService;
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @RequestMapping ("/")
+    public String board(Model model){
+
+        for(PostVO p : postService.getPostList()) {
+            logger.info("id=" + p.getId());
+            logger.info("contents=" + p.getContents());
+            logger.info("title=" + p.getTitle());
+            logger.info("writer=" + p.getWriter());
+        }
+
+
         return "board";
     }
 }

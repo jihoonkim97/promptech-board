@@ -8,5 +8,6 @@ import java.util.List;
 @Mapper
 public interface PostMapper {
     List<PostVO> getPostList();
+    PostVO getPost(int postId);
     void createPost(PostVO post);
 }

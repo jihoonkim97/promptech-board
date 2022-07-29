@@ -6,6 +6,10 @@
     <select id="getPostList" resultType="co.kr.promptech.model.PostVO">
         SELECT * FROM posts
     </select>
+
+    <select id="getPost" resultType="co.kr.promptech.model.PostVO" parameterType="int">
+        SELECT * FROM posts WHERE id=#{id}
+    </select>
     
     <insert id="createPost" parameterType="co.kr.promptech.model.PostVO">
         INSERT INTO posts(title, contents)

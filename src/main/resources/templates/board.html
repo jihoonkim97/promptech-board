@@ -13,13 +13,13 @@
             <tr>
                 <th>No</th>
                 <th>title</th>
-                <th>contents</th>
+                <!--<th>contents</th>-->
                 <th>writer</th>
             </tr>
             <tr th:each="post : ${postList}">
                 <td th:text="${post.getId}"></td>
-                <td th:text="${post.getTitle}"></td>
-                <td th:text="${post.getContents}"></td>
+                <td><a th:href="@{/postDetail/{postId}(postId=${post.getId})}" th:text="${post.getTitle}"></a></td>
+                <!--<td th:text="${post.getContents}"></td>-->
                 <td th:text="${post.getWriter}"></td>
             </tr>
         </table>

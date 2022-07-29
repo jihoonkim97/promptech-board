@@ -17,6 +17,10 @@ public class PostService {
         return postMapper.getPostList();
     }
 
+    public PostVO getPost(int postId){
+        return postMapper.getPost(postId);
+    }
+
     public void createPost(PostVO post){
         postMapper.createPost(post);
     }

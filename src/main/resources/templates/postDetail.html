@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BOARD</title>
+</head>
+
+<body>
+    <div>
+        <a th:href="@{/}">BOARD</a><br><br>
+
+        <table>
+            <tr>
+                <td>title</td>
+                <td th:text="${post.getTitle}"></td>
+            </tr>
+            <tr>
+                <td>contents</td>
+                <td th:text="${post.getContents}"></td>
+            </tr>
+        </table>
+
+        <!--
+        <a th:href="@{/update}">update</a>
+        <a th:href="@{/delete}">delete</a>
+        -->
+    </div>
+</body>
+</html>

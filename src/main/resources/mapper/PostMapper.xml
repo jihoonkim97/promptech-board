@@ -16,4 +16,10 @@
         VALUE (#{title},#{contents})
     </insert>
 
+    <update id="updatePost" parameterType="co.kr.promptech.model.PostVO">
+        UPDATE posts
+        SET title = #{title}, contents = #{contents}
+        WHERE id = #{id}
+    </update>
+
 </mapper>

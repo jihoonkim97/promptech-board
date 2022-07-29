@@ -42,4 +42,18 @@ public class BoardController {
 
         return "postDetail";
     }
+
+    @RequestMapping("/updatePost/{postId}")
+    public String updatePost(Model model, @PathVariable int postId){
+        model.addAttribute("post", postService.getPost(postId));
+
+        return "updatePost";
+    }
+
+    @RequestMapping(value = "/updatePost")
+    public String updatePost(PostVO post){
+        postService.updatePost(post);
+
+        return "redirect:/postDetail/"+post.getId();
+    }
 }

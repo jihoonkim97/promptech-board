@@ -24,4 +24,8 @@ public class PostService {
     public void createPost(PostVO post){
         postMapper.createPost(post);
     }
+
+    public void updatePost(PostVO post){
+        postMapper.updatePost(post);
+    }
 }

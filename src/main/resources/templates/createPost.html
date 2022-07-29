@@ -9,10 +9,21 @@
     <div>
         <a th:href="@{/}">BOARD</a><br><br>
 
-        <!--
-        <form th:action="@{/createPost}" method="post">
 
-        </form>-->
+        <form th:action="@{/createPost}" method="post">
+            <table>
+                <tr>
+                    <td>title</td>
+                    <td><input type="text" name="title" placeholder="제목을 입력해주세요."></td>
+                </tr>
+                <tr>
+                    <td>contents</td>
+                    <td><textarea name="contents" placeholder="내용을 입력해주세요."></textarea></td>
+                </tr>
+            </table>
+
+            <input type="submit" value="save">
+        </form>
 
     </div>
 </body>

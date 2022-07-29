@@ -6,5 +6,10 @@
     <select id="getPostList" resultType="co.kr.promptech.model.PostVO">
         SELECT * FROM posts
     </select>
+    
+    <insert id="createPost" parameterType="co.kr.promptech.model.PostVO">
+        INSERT INTO posts(title, contents)
+        VALUE (#{title},#{contents})
+    </insert>
 
 </mapper>

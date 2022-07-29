@@ -33,7 +33,8 @@ public class BoardController {
 
     @PostMapping("/createPost")
     public String createPost(PostVO post){
-        //service
-        return "createPost";
+        postService.createPost(post);
+
+        return "redirect:/";
     }
 }

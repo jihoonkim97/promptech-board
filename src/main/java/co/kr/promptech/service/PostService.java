@@ -16,4 +16,8 @@ public class PostService {
     public List<PostVO> getPostList(){
         return postMapper.getPostList();
     }
+
+    public void createPost(PostVO post){
+        postMapper.createPost(post);
+    }
 }

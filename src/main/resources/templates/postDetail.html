@@ -21,9 +21,7 @@
         </table>
 
         <a th:href="@{/updatePost/{postId}(postId=${post.getId})}">update</a>
-        <!--
-        <a th:href="@{/delete}">delete</a>
-        -->
+        <a th:href="@{/deletePost/{postId}(postId=${post.getId})}">delete</a>
     </div>
 </body>
 </html>

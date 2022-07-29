@@ -11,4 +11,5 @@ public interface PostMapper {
     PostVO getPost(int postId);
     void createPost(PostVO post);
     void updatePost(PostVO post);
+    void deletePost(int postId);
 }

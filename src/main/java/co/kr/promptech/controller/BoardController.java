@@ -50,10 +50,17 @@ public class BoardController {
         return "updatePost";
     }
 
-    @RequestMapping(value = "/updatePost")
+    @RequestMapping("/updatePost")
     public String updatePost(PostVO post){
         postService.updatePost(post);
 
         return "redirect:/postDetail/"+post.getId();
+    }
+
+    @RequestMapping("/deletePost/{postId}")
+    public String deletePost(@PathVariable int postId){
+        postService.deletePost(postId);
+
+        return "redirect:/";
     }
 }

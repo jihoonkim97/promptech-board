@@ -19,14 +19,7 @@ public class BoardController {
 
     @RequestMapping ("/")
     public String board(Model model){
-
-        for(PostVO p : postService.getPostList()) {
-            logger.info("id=" + p.getId());
-            logger.info("contents=" + p.getContents());
-            logger.info("title=" + p.getTitle());
-            logger.info("writer=" + p.getWriter());
-        }
-
+        model.addAttribute("postList", postService.getPostList());
 
         return "board";
     }

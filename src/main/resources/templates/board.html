@@ -2,13 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BOARD</title>
 </head>
 
 <body>
 
+<H2>BOARD</H2><br><br>
 
-main page
+<table>
+    <tr>
+        <th>No</th>
+        <th>제목</th>
+        <th>내용</th>
+        <th>작성자</th>
+    </tr>
+    <tr th:each="post : ${postList}">
+        <td th:text="${post.getId}"></td>
+        <td th:text="${post.getTitle}"></td>
+        <td th:text="${post.getContents}"></td>
+        <td th:text="${post.getWriter}"></td>
+    </tr>
+</table>
 
 
 

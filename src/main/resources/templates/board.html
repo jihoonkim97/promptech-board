@@ -6,25 +6,25 @@
 </head>
 
 <body>
+    <div>
+        <a th:href="@{/}">BOARD</a><br><br>
 
-<H2>BOARD</H2><br><br>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>title</th>
+                <th>contents</th>
+                <th>writer</th>
+            </tr>
+            <tr th:each="post : ${postList}">
+                <td th:text="${post.getId}"></td>
+                <td th:text="${post.getTitle}"></td>
+                <td th:text="${post.getContents}"></td>
+                <td th:text="${post.getWriter}"></td>
+            </tr>
+        </table>
 
-<table>
-    <tr>
-        <th>No</th>
-        <th>제목</th>
-        <th>내용</th>
-        <th>작성자</th>
-    </tr>
-    <tr th:each="post : ${postList}">
-        <td th:text="${post.getId}"></td>
-        <td th:text="${post.getTitle}"></td>
-        <td th:text="${post.getContents}"></td>
-        <td th:text="${post.getWriter}"></td>
-    </tr>
-</table>
-
-
-
+        <a th:href="@{/createPost}">create</a>
+    </div>
 </body>
 </html>
